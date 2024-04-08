@@ -1,0 +1,71 @@
+/* h1{
+    font-family: "Red Hat Mono", monospace;
+    font-family: "Inconsolata", monospace;
+} */
+
+
+
+
+/* NORMALIZACIÓN */
+
+* {
+    padding:  0;
+    margin: 0;
+    box-sizing: border-box; /*  Mantiene el ancho y alto a pesar de padding y border */
+    font-family: "Inconsolata", monospace;
+    list-style-type: none; /* Quitar decoración de las listas */
+    text-decoration: none; /* Esto quita el subrayado de los enlaces */
+    color: white;
+}
+
+body{
+    background-color: black; /* TODO: borrar cuando tengamos el fondo final */
+}
+
+header {
+    position: fixed; /* Esto hace que el header se quede fijo en la parte superior  */
+    right: 0;
+    top: 0;
+    z-index: 100; /* Esto hace que el header se muestre por encima */
+    width: 100%;
+    display: flex; /* Esto hace que los elementos se pongan en línea */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Que los elementos se separen */
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 750;
+}
+
+.navlist{
+    display: flex;/*  sirve para mostrar los elementos en linea */
+
+
+}
+
+.navlist a{
+    margin-left: 60px; /* Es para separar las palabras */
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /* subrayado transparente */
+    transition: all .5s ease; /* esto es para transicionar las caracteristicas de navlists a */
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid white; appearance: none; /* aparece cuando hacemos hover*/
+}
+
+#menu-icon{
+    display: none;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon-action{
+    display: none;
+}
