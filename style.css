@@ -3,69 +3,278 @@
     font-family: "Inconsolata", monospace;
 } */
 
-
-
-
 /* NORMALIZACIÓN */
 
 * {
-    padding:  0;
-    margin: 0;
-    box-sizing: border-box; /*  Mantiene el ancho y alto a pesar de padding y border */
-    font-family: "Inconsolata", monospace;
-    list-style-type: none; /* Quitar decoración de las listas */
-    text-decoration: none; /* Esto quita el subrayado de los enlaces */
-    color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /*  Mantiene el ancho y alto a pesar de padding y border */
+  font-family: "Inconsolata", monospace;
+  list-style-type: none; /* Quitar decoración de las listas */
+  text-decoration: none; /* Esto quita el subrayado de los enlaces */
+  color: white;
 }
 
-body{
-    background-color: black; /* TODO: borrar cuando tengamos el fondo final */
+body {
+  background-color: black; /* TODO: borrar cuando tengamos el fondo final */
 }
 
 header {
-    position: fixed; /* Esto hace que el header se quede fijo en la parte superior  */
+  position: fixed; /* Esto hace que el header se quede fijo en la parte superior  */
+  right: 0;
+  top: 0;
+  z-index: 100; /* Esto hace que el header se muestre por encima */
+  width: 100%;
+  display: flex; /* Esto hace que los elementos se pongan en línea */
+  align-items: center; /* Centra verticalmente */
+  justify-content: space-between; /* Que los elementos se separen */
+  padding: 15px 3%;
+  background-color: transparent;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 750;
+}
+
+.navlist {
+  display: flex; /*  sirve para mostrar los elementos en linea */
+}
+
+.navlist a {
+  margin-left: 60px; /* Es para separar las palabras */
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent; /* subrayado transparente */
+  transition: all 0.5s ease; /* esto es para transicionar las caracteristicas de navlists a */
+}
+
+.navlist a:hover {
+  border-bottom: 2px solid white;
+  appearance: none; /* aparece cuando hacemos hover*/
+}
+
+#menu-icon {
+  display: none;
+}
+
+#menu-icon {
+  font-size: 35px;
+  z-index: 101;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon-action {
+  display: none;
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+section {
+  padding: 0 8%;
+}
+
+.hero-text h5 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.hero-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero-text h1 {
+  font-family: "Red Hat Mono", monospace;
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 0 30px;
+}
+
+.hero-text p {
+  font-size: 80%;
+  margin-bottom: 40px;
+  line-height: 1.9;
+}
+
+.hero-img img {
+  width: 400px;
+  margin: 10% 0 0 10%;
+  height: auto;
+  opacity: 0.6;
+  transition: all 3s linear;
+  padding-bottom: 25%;
+}
+
+.hero-img img:hover {
+  width: 450px;
+  opacity: 1;
+  color: purple;
+}
+
+.hero-text a {
+  display: inline-block;
+  background-color: #4d4d4d;
+  border: 1px solid transparent;
+  padding: 15px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.hero-text a:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  transform: translateX(8px);
+}
+
+.hero-text a.videos {
+  background-color: transparent;
+  border: 1px solid white;
+  margin-left: 1%;
+}
+
+.hero-text a.videos i {
+  margin-right: 5px;
+}
+
+.hero-text a.resume i {
+  margin-right: 5px;
+}
+
+.icons {
+  position: absolute;
+  top: 50vh;
+  padding: 0 3%;
+  transform: translateY(-50%);
+}
+
+.icons i {
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+
+.icons i:hover {
+  color: #4d4d4d;
+  transform: translateY(-5px);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 6%;
+  right: 3%;
+}
+
+.scroll-down i {
+  display: block;
+  padding: 12px;
+  font-size: 25px;
+  background-color: #21383d;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+
+.scroll-down i:hover {
+  transform: translateY(5px);
+}
+
+@media (max-width: 992px) {
+  section {
+    padding: 0 3%;
+    transition: 0.2s;
+  }
+
+  .hero-text {
+    padding-top: 0;
+  }
+
+  .hero-img {
+    text-align: center;
+  }
+
+  .hero-img img {
+    width: 80%;
+    margin: 10% 0 0 10%;
+  }
+
+  .hero-text p {
+    font-size: 70%;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .scroll-down {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-icon-action {
+    display: block;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .hero-img img {
+    margin: 0;
+  }
+
+  .hero {
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .navlist {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: 180px;
+    background-color: #032a26ef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: all 0.5s ease-out;
+  }
+
+  .navlist a {
+    display: block;
+    margin: 7px 0;
+  }
+
+  #menu-toggle:checked + label.menu-icon-action + ul {
     right: 0;
-    top: 0;
-    z-index: 100; /* Esto hace que el header se muestre por encima */
-    width: 100%;
-    display: flex; /* Esto hace que los elementos se pongan en línea */
-    align-items: center; /* Centra verticalmente */
-    justify-content: space-between; /* Que los elementos se separen */
-    padding: 15px 3%;
-    background-color: transparent;
-}
-
-.logo{
-    font-size: 30px;
-    font-weight: 750;
-}
-
-.navlist{
-    display: flex;/*  sirve para mostrar los elementos en linea */
-
-
-}
-
-.navlist a{
-    margin-left: 60px; /* Es para separar las palabras */
-    font-size: 15px;
-    font-weight: 600;
-    border-bottom: 2px solid transparent; /* subrayado transparente */
-    transition: all .5s ease; /* esto es para transicionar las caracteristicas de navlists a */
-}
-
-.navlist a:hover{
-    border-bottom: 2px solid white; appearance: none; /* aparece cuando hacemos hover*/
-}
-
-#menu-icon{
-    display: none;
-}
-
-#menu-toggle{
-    display: none;
-}
-
-.menu-icon-action{
-    display: none;
+  }
 }
